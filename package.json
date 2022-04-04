@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "./script.sh dev",
-    "webpack": "webpack --mode production",
-    "webpack-server": "webpack serve",
+    "webpack": "webpack --watch",
     "server": "nodemon ./server/app.js",
     "build": "./script.sh build",
     "test": "jest --passWithNoTests "
@@ -34,6 +33,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@stitches/react": "^1.2.7",
     "cors": "^2.8.5",
     "debug": "^4.3.2",
     "dotenv": "^10.0.0",
