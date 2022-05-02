@@ -8,7 +8,7 @@
     "webpack": "webpack --watch",
     "server": "nodemon ./server/app.js",
     "build": "./script.sh build",
-    "test": "jest --passWithNoTests "
+    "test": "jest --passWithNoTests"
   },
   "keywords": [],
   "author": "",

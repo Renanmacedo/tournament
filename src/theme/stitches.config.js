@@ -38,7 +38,8 @@ export const {
             primaryLight: '#e6ecff',
             primaryDark: '#6b7db3',
             primaryA100: '#ccd9ff',
-            background: '#ffffff'
+            background: '#ffffff',
+            boxColor: '#ffffff'
         },
         fonts: {},
         radii: {
