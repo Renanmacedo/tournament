@@ -1,15 +1,25 @@
+
 import React from "react";
-import Button from '../components/button'
-import '@aquino/web-components'
+import Header from '../components/header'
+import Layout from '../components/layout'
+import Content from '../components/content'
+import Footer from '../components/footer'
+import { globalCss } from '../theme/stitches.config'
+const globalStyle = globalCss({ '*': { margin: 0}})
 const App = () => {
+    globalStyle()
     return (
-        <div>
-            <ra-header title="Nome"></ra-header>
-            <section>
-                <Button color="primary" pill>Settings</Button>
-                <p>Template React with Webpack + Module Federation</p>
-            </section>
-        </div>
+        <Layout>
+            <Header>
+            </Header>
+
+            <Content>
+                {/* content */}
+            </Content>
+            <Footer>
+                Footer
+            </Footer>
+        </Layout>
     )
 };
 export default App;

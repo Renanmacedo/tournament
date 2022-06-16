@@ -11,6 +11,7 @@ export const {
     config,
   } = createStitches({
     prefix: 'tournament-',
+    
     theme: {
         fontSizes: {
             1: '0.625rem',
@@ -23,7 +24,8 @@ export const {
             2: '0.625rem',
             3: '0.75rem',
             4: '0.875rem',
-            5: '1rem'
+            5: '1rem',
+            full: '100%'
             
         },
         sizes:{
@@ -31,7 +33,8 @@ export const {
             2: '0.625rem',
             3: '0.75rem',
             4: '0.875rem',
-            5: '1rem'
+            5: '1rem',
+            full: '100%'
         },
         colors: {
             primary: '#9999ff',
@@ -49,7 +52,6 @@ export const {
             round: '50%',
             pill: '9999px'
         }
-        
     },
     utils: {
         mb: (value) => ({ marginBottom: value }),
@@ -57,7 +59,8 @@ export const {
         mf: (value) => ({ marginLeft: value }),
         mr: (value) => ({ marginRight: value }),
         mx: (value) => ({ marginRight: value, marginLeft: value}),
-        my: (value) => ({ marginTop: value, marginBottom: value})
+        my: (value) => ({ marginTop: value, marginBottom: value}),
+        pt: (value) => ({ paddingTop: value})
     }
 })
 export default theme;
