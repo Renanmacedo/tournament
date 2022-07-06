@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "./script.sh dev",
-    "webpack": "webpack --watch",
+    "webpack": "webpack",
     "server": "nodemon ./server/app.js",
     "build": "./script.sh build",
     "test": "jest --passWithNoTests"
@@ -43,7 +43,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "@aquinoconsultoria/lit-components": "^3.0.2",
     "@stitches/react": "^1.2.7",
     "cors": "^2.8.5",
     "debug": "^4.3.2",

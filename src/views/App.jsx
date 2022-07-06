@@ -9,7 +9,6 @@ import * as themes from '../theme/'
 import { getTheme } from '../utils/themeName';
 import  { Card, CardContent, CardImage }  from '../components/card';
 import  Text from '../components/text';
-
 const themeName = getTheme()
 const theme = themes[themeName]
 
@@ -25,8 +24,7 @@ const App = () => {
     globalStyle()
     return (
         <Layout className={theme}>
-            <Header>
-            </Header>
+            <Header />
             <Content>
                 <Card>
                     <CardImage src="https://via.placeholder.com/216"/>
