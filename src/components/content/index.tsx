@@ -8,7 +8,9 @@ import { UaiKitComponentWithAsCss } from '../../utils/types'
 const ContentStyle = styled(Box, {
     fh: '$full',
     fw: '$full',
-    pt: '85px'
+    pt: '85px',
+    maxWidth: 'calc(100% - 350px)',
+    maxHeight: 'calc(100% - 300px)'
 })
 type ContentProps = UaiKitComponentWithAsCss<'div'> & UaiKitVariants<typeof ContentStyle>;
 const Content = forwardRef<'div', ContentProps>((props, ref) => (
