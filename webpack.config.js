@@ -59,6 +59,6 @@ module.exports = {
     ],
     devServer: {
         port: 4001,
-        allowedHosts: 'all'
+        allowedHosts: ['.local']
     }
 }

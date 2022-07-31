@@ -4,6 +4,7 @@ const debug = require("debug")("bff:server");
 const cors = require("cors");
 const express = require('express');
 const SessionMiddleware = require('./middleware/session')
+const themeMiddleware = require('./middleware/themeDetection') 
 const ejs = require('ejs');
 const app = express();
 
@@ -23,7 +24,10 @@ if(Enviroments.isDev())
     app.use(express.static(global.APP_ROOT + 'dist/'));
 
 
+app.use('/', require('./routes/no-session'))
 app.use(SessionMiddleware.createSession)
+app.use(SessionMiddleware.checkSession)
+app.use(themeMiddleware.detectionApplication)
 
 app.use('/', require('./routes'));
 
