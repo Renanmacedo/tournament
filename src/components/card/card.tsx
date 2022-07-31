@@ -7,6 +7,7 @@ const CardStyle = styled(Box, {
     width: '216px',
     border: '1px solid $primary',
     padding: '$0',
+    margin: '$2',
     variants: {
         variant: {
             noBorder: {

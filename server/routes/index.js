@@ -1,6 +1,6 @@
-const router = require("express").Router();
-const ThemeDetection = require('../middleware/themeDetection')
+const router = require('express').Router()
+const themeMiddleware = require('../middleware/themeDetection') 
 
-router.use(ThemeDetection.themeName)
+router.use(themeMiddleware.themeName)
+module.exports = router
 
-module.exports = router;

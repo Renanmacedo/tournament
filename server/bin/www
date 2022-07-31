@@ -1,0 +1,45 @@
+#!/usr/bin/env node
+const debug = require('debug')('tournament:bin:www')
+
+const numCPUs = process.env.CPU_LIMIT || 1
+const cluster = require('cluster')
+const app = require('app')
+
+const http = require('http')
+const https = require('https')
+
+http.globalAgent.keepAlive = true
+https.globalAgent.keepAlive = true
+
+require('dnscache')({
+  enable: true,
+  ttl: 300,
+  cachesize: 1000,
+})
+
+const _onWorkerError = (code, signal) => {
+  console.log('error')
+}
+
+const _raiseWorker = () => {
+  const worker = cluster.fork()
+  worker.on('error', _onWorkerError)
+}
+
+if (cluster.isMaster && numCPUs > 1) {
+  for (let i = 0; i < numCPUs; i++) {
+    _raiseWorker()
+  }
+
+  cluster.on('exit', (worker) => {
+    _raiseWorker()
+    debug('a new worker rises', worker.process.pid)
+  })
+} else {
+  const server = app.listen(app.get('port'), () => {
+    debug('app started', app.get('env'), app.get('port'))
+  })
+  server.on('error', (err) => {
+    console.error('server.error', { err: err })
+  })
+}

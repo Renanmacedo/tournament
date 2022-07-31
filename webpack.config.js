@@ -57,9 +57,8 @@ module.exports = {
             template: path.resolve(__dirname, 'public/index.html')
         })
     ],
-    output: {
-        chunkFilename: "[contenthash].js",
-        path: path.resolve(__dirname, 'dist/'),
-        publicPath: process.env.HOST_URL,
+    devServer: {
+        port: 4001,
+        allowedHosts: 'all'
     }
 }
