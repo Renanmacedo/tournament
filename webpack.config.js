@@ -24,6 +24,9 @@ module.exports = {
     entry: {
         index: "./src/index"
     },
+    output: {
+        path: path.resolve(__dirname, 'build')
+    },
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
       },
@@ -58,7 +61,6 @@ module.exports = {
         })
     ],
     devServer: {
-        port: 4001,
-        allowedHosts: ['.local']
+        port: 4001
     }
 }

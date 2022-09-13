@@ -24,7 +24,6 @@ const App = () => {
         getConfig()
     }, [])
     globalStyle()
-    console.log(config)
     return (
         <Layout className={theme}>
             <Header />

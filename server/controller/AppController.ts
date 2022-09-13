@@ -1,5 +1,6 @@
+import { Request, Response, NextFunction } from 'express'
 const AppController = { 
-    health(request,response,next) {
+    health(request: Request,response: Response,next: NextFunction) {
         response.json({
             status: 'ok',
             pid: process.pid,
@@ -14,4 +15,4 @@ const AppController = {
         })
     }
 }
-module.exports = AppController
+export default AppController

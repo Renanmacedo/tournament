@@ -1,7 +1,8 @@
-const session = require('express-session')
-const redis = require('../helper/redis')
+import { Request, Response, NextFunction } from 'express'
+import expressSession from 'express-session'
+
 const SessionMiddleware  =  {
-    createSession: session({
+    createSession: expressSession({
         cookie: {
             maxAge: 60 * 60 * 60 * 60,
             path: '/',
@@ -12,10 +13,8 @@ const SessionMiddleware  =  {
         name: 'tournament.sid',
         saveUninitialized: false,
         resave: false,
-        store: redis.session
     }),
-    checkSession: (req, res,next) => {
-
+    checkSession: (req:Request, res: Response, next: NextFunction) => {
         if(req.session.cookie) {
             req.session.cookie.domain = 'tournament.local'
         }
@@ -23,4 +22,4 @@ const SessionMiddleware  =  {
     } 
 }
 
-module.exports = SessionMiddleware
+export default SessionMiddleware

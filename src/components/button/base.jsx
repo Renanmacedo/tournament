@@ -3,12 +3,13 @@ import { styled } from "../../theme/stitches.config"
 export default styled('button', {
     outline: 0,
     border: 'none',    
-    height: 35,
-    padding: '$2',
+    minHeight: 35,
+    padding: '$4',
     fontSize: '$3',
     appearance: 'none',
     textDecoration: 'none',
     lineHeight: 1,
+    cursor: 'pointer',
     variants: {
         color: {
             primary: {
